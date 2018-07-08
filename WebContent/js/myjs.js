@@ -185,7 +185,7 @@ $('#logout').on('click',function(){
 		type : 'post',
 		url : 'logout'
 	});
-	location.href = location.hostname;
+	location.hostname;
 });
 //---------------------------
 

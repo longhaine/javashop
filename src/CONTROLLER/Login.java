@@ -38,13 +38,14 @@ public class Login extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		LoadBanner(request, response);
 		HttpSession session = request.getSession();
-		if(session.getAttribute("email") == null)
+		JSONObject user = (JSONObject) session.getAttribute("user");
+		if(user == null)
 		{
 			request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
 		}
 		else
 		{
-			response.sendRedirect("http://localhost:8080/WebShop/");
+			response.sendRedirect(request.getServerName());
 		}
 	}
 
