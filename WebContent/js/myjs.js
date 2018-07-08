@@ -166,16 +166,16 @@ function caculatingSummary() {
 caculatingSummary();
 // link login, register, history, logout
 $('#login').on('click',function(){
-	location.href = location.hostname+"/login";
+	location.href = "/login";
 });
 $('#register').on('click',function(){
-	location.href = location.hostname+"/register";
+	location.href = "/register";
 });
 $('#yourinfo').on('click',function(){
-	location.href = location.hostname+"/your-info";
+	location.href = "/your-info";
 });
 $('#changepassword').on('click',function(){
-	location.href = location.hostname+"/change-pass";
+	location.href = "/change-pass";
 });
 $('#history').on('click',function(){
 	location.href = location.hostname+"/orders";
