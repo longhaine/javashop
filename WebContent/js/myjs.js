@@ -178,14 +178,14 @@ $('#changepassword').on('click',function(){
 	location.href = "/change-pass";
 });
 $('#history').on('click',function(){
-	location.href = location.hostname+"/orders";
+	location.href = "/history";
 });
 $('#logout').on('click',function(){
 	$.ajax({
 		type : 'post',
 		url : 'logout'
 	});
-	location.hostname;
+	location.href= "/";
 });
 //---------------------------
 
