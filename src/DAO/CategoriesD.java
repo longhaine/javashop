@@ -15,7 +15,7 @@ public class CategoriesD {
 	
 	public JSONArray getCategories() throws IOException
 	{
-		String path = "http://localhost:3000/categories";
+		String path = "https://serverjavashop.herokuapp.com/categories";
 		URL url = new URL(path);
 		Scanner scan = new Scanner(url.openStream());
 		String json = "";

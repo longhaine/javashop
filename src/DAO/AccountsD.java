@@ -18,7 +18,7 @@ public class AccountsD {
 		request.put("email", email);
 		request.put("password", password);
 		CloseableHttpClient httpClient = HttpClientBuilder.create().build();
-		HttpPost post = new HttpPost("http://localhost:3000/accounts/login");
+		HttpPost post = new HttpPost("https://serverjavashop.herokuapp.com/accounts/login");
 		StringEntity params = new StringEntity(request.toString());
 		post.addHeader("content-type", "application/json");
 		post.setEntity(params);
@@ -35,7 +35,7 @@ public class AccountsD {
 		request.put("password", password);
 		request.put("name", name);
 		CloseableHttpClient httpClient = HttpClientBuilder.create().build();
-		HttpPost post = new HttpPost("http://localhost:3000/accounts/register");
+		HttpPost post = new HttpPost("https://serverjavashop.herokuapp.com/accounts/register");
 		StringEntity params = new StringEntity(request.toString());
 		post.addHeader("content-type", "application/json");
 		post.setEntity(params);
@@ -53,7 +53,7 @@ public class AccountsD {
 		request.put("address", address);
 		request.put("phone", phone);
 		CloseableHttpClient httpClient = HttpClientBuilder.create().build();
-		HttpPost post = new HttpPost("http://localhost:3000/accounts/update");
+		HttpPost post = new HttpPost("https://serverjavashop.herokuapp.com/accounts/update");
 		StringEntity params = new StringEntity(request.toString());
 		post.addHeader("content-type", "application/json");
 		post.setEntity(params);
@@ -69,7 +69,7 @@ public class AccountsD {
 		request.put("email", email);
 		request.put("password", password);
 		CloseableHttpClient httpClient = HttpClientBuilder.create().build();
-		HttpPost post = new HttpPost("http://localhost:3000/accounts/changepassword");
+		HttpPost post = new HttpPost("https://serverjavashop.herokuapp.com/accounts/changepassword");
 		StringEntity params = new StringEntity(request.toString());
 		post.addHeader("content-type", "application/json");
 		post.setEntity(params);

@@ -20,7 +20,7 @@ public class Orders_DetailsD {
 		request.put("idOrder", idOrder);
 		request.put("productList", productList);
 		CloseableHttpClient httpClient = HttpClientBuilder.create().build();
-		HttpPost post = new HttpPost("http://localhost:3000/orders_details");
+		HttpPost post = new HttpPost("https://serverjavashop.herokuapp.com/orders_details");
 		StringEntity params = new StringEntity(request.toString());
 		post.addHeader("content-type", "application/json");
 		post.setEntity(params);
@@ -33,7 +33,7 @@ public class Orders_DetailsD {
 		return message;
 	}
 	public JSONArray getOrderDetails(int id) throws IOException {
-		String path ="http://localhost:3000/orders_details/get/"+id;
+		String path ="https://serverjavashop.herokuapp.com/orders_details/get/"+id;
 		URL url = new URL(path);
 		Scanner scan = new Scanner(url.openStream());
 		String json = "";

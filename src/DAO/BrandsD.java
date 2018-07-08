@@ -9,7 +9,7 @@ import org.json.JSONArray;
 public class BrandsD {
 	public JSONArray getBrands() throws IOException
 	{
-		String path ="http://localhost:3000/brands";
+		String path ="https://serverjavashop.herokuapp.com/brands";
 		URL url = new URL(path);
 		Scanner scan = new Scanner(url.openStream());
 		String json = "";

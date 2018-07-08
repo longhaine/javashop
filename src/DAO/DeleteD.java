@@ -16,7 +16,7 @@ import org.json.JSONObject;
 
 public class DeleteD {
 	public String Table(String table, String id) throws IOException {
-		String path ="http://localhost:3000/delete/"+table+"/"+id;
+		String path ="https://serverjavashop.herokuapp.com/delete/"+table+"/"+id;
 		URL url = new URL(path);
 		Scanner scan = new Scanner(url.openStream());
 		String json = "";

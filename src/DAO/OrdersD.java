@@ -20,7 +20,7 @@ public class OrdersD {
 		request.put("order", order);
 		request.put("price", price);
 		CloseableHttpClient httpClient = HttpClientBuilder.create().build();
-		HttpPost post = new HttpPost("http://localhost:3000/orders");
+		HttpPost post = new HttpPost("https://serverjavashop.herokuapp.com/orders");
 		StringEntity params = new StringEntity(request.toString());
 		post.addHeader("content-type", "application/json");
 		post.setEntity(params);
@@ -33,7 +33,7 @@ public class OrdersD {
 		return idOrder;
 	}
 	public JSONArray GetOrdersGuest(String sessionId) throws IOException {
-		String path ="http://localhost:3000/orders/guest/"+sessionId;
+		String path ="https://serverjavashop.herokuapp.com/orders/guest/"+sessionId;
 		URL url = new URL(path);
 		Scanner scan = new Scanner(url.openStream());
 		String json = "";
@@ -46,7 +46,7 @@ public class OrdersD {
 		return jsonarr;
 	}
 	public JSONArray GetOrdersUser(String email) throws IOException {
-		String path ="http://localhost:3000/orders/email/"+email;
+		String path ="https://serverjavashop.herokuapp.com/orders/email/"+email;
 		URL url = new URL(path);
 		Scanner scan = new Scanner(url.openStream());
 		String json = "";
@@ -59,7 +59,7 @@ public class OrdersD {
 		return jsonarr;
 	}
 	public boolean CheckOrderGuest(String sessionId,int id) throws IOException {
-		String path ="http://localhost:3000/orders/checkguest/"+sessionId+"/"+id;
+		String path ="https://serverjavashop.herokuapp.com/orders/checkguest/"+sessionId+"/"+id;
 		URL url = new URL(path);
 		Scanner scan = new Scanner(url.openStream());
 		String json = "";
@@ -72,7 +72,7 @@ public class OrdersD {
 		return jsonobject.getBoolean("message");
 	}
 	public boolean CheckOrderUser(String email,int id) throws IOException {
-		String path ="http://localhost:3000/orders/checkuser/"+email+"/"+id;
+		String path ="https://serverjavashop.herokuapp.com/orders/checkuser/"+email+"/"+id;
 		URL url = new URL(path);
 		Scanner scan = new Scanner(url.openStream());
 		String json = "";
