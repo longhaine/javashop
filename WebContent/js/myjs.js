@@ -166,26 +166,26 @@ function caculatingSummary() {
 caculatingSummary();
 // link login, register, history, logout
 $('#login').on('click',function(){
-	location.href = "http://localhost:8080/WebShop/login";
+	location.href = location.hostname+"/login";
 });
 $('#register').on('click',function(){
-	location.href = "http://localhost:8080/WebShop/register";
+	location.href = location.hostname+"/register";
 });
 $('#yourinfo').on('click',function(){
-	location.href = "http://localhost:8080/WebShop/your-info";
+	location.href = location.hostname+"/your-info";
 });
 $('#changepassword').on('click',function(){
-	location.href = "http://localhost:8080/WebShop/change-pass";
+	location.href = location.hostname+"/change-pass";
 });
 $('#history').on('click',function(){
-	location.href = "http://localhost:8080/WebShop/orders";
+	location.href = location.hostname+"/orders";
 });
 $('#logout').on('click',function(){
 	$.ajax({
 		type : 'post',
 		url : 'logout'
 	});
-	location.href = "http://localhost:8080/WebShop/"
+	location.href = location.hostname;
 });
 //---------------------------
 
