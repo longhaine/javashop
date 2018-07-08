@@ -55,7 +55,7 @@ public class Admin extends HttpServlet {
 			request.getRequestDispatcher("WEB-INF/admin.jsp").forward(request, response);
 			}
 			else {
-				response.sendRedirect("http://localhost:8080/WebShop/");
+				response.sendRedirect("/");
 			}
 	}
 

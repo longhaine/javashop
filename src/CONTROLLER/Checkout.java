@@ -66,7 +66,7 @@ public class Checkout extends HttpServlet {
 		}
 		else
 		{
-			response.sendRedirect("http://localhost:8080/WebShop/");
+			response.sendRedirect("/");
 		}
 		
 	}
@@ -121,7 +121,7 @@ public class Checkout extends HttpServlet {
 					session.removeAttribute("productList");// delete productList just placed order
 					session.setAttribute("message", "Place order successfully!!! The products will be delivered to your address tomorrow!");
 				}
-				response.sendRedirect("http://localhost:8080/WebShop/orders");
+				response.sendRedirect("/orders");
 		}
 		else if(productList !=null && user == null) // in case guest
 		{
@@ -149,7 +149,7 @@ public class Checkout extends HttpServlet {
 					session.setAttribute("guest", order);// generate guest info
 					session.setAttribute("message", "Place order successfully!!! The products will be delivered to your address tomorrow!");
 				}
-				response.sendRedirect("http://localhost:8080/WebShop/orders");
+				response.sendRedirect("/orders");
 			}
 			else {
 				request.setAttribute("message", "invalid");
@@ -158,7 +158,7 @@ public class Checkout extends HttpServlet {
 		}
 		else // something's wrong 
 		{
-			response.sendRedirect("http://localhost:8080/WebShop/");
+			response.sendRedirect("/");
 		}
 		
 	}
