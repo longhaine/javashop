@@ -45,7 +45,7 @@ public class Login extends HttpServlet {
 		}
 		else
 		{
-			response.sendRedirect(request.getServerName());
+			response.sendRedirect("");
 		}
 	}
 
@@ -83,10 +83,10 @@ public class Login extends HttpServlet {
 				if(pathBefore != null) 
 				{
 					
-					response.sendRedirect("http://localhost:8080/WebShop/"+pathBefore);
+					response.sendRedirect("/"+pathBefore);
 				}
 				else {
-					response.sendRedirect("http://localhost:8080/WebShop/");
+					response.sendRedirect("");
 				}
 
 			}
