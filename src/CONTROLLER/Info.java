@@ -48,7 +48,7 @@ public class Info extends HttpServlet {
 			Cookie path = new Cookie("path",request.getServletPath().substring(1));
 			path.setMaxAge(5*60);
 			response.addCookie(path);
-			response.sendRedirect("http://localhost:8080/WebShop/login");
+			response.sendRedirect("/login");
 		}
 	}
 

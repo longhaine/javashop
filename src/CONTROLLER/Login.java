@@ -45,7 +45,7 @@ public class Login extends HttpServlet {
 		}
 		else
 		{
-			response.sendRedirect("");
+			response.sendRedirect("/");
 		}
 	}
 
@@ -86,7 +86,7 @@ public class Login extends HttpServlet {
 					response.sendRedirect("/"+pathBefore);
 				}
 				else {
-					response.sendRedirect("");
+					response.sendRedirect("/");
 				}
 
 			}
