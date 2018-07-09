@@ -19,7 +19,7 @@
             <!-- Classy Menu -->
             <nav class="classy-navbar" id="essenceNav">
                 <!-- Logo -->
-                <a class="nav-brand" href="index.html"><img src="img/logo/tlogovogue.png" alt=""></a>
+                <a class="nav-brand" href="/"><img src="img/logo/tlogovogue.png" alt=""></a>
              </nav>
         </div>
     </header>
@@ -267,10 +267,93 @@
 <div class="modal-dialog">
 <div class="modal-content">
 <div class="modal-header">
-<h4 class="modal-title">Modal Header</h4>
+<h4 class="modal-title">Edit Product</h4>
 </div>
 <div class="modal-body">
-<p>Some text in the edit.</p>
+<div class="container">
+<div class="col-12 col-md-offset-12">
+  <form class="form-horizontal center" action="edit" method="post" enctype="multipart/form-data">
+     <div class="form-group">
+      <label class="control-label col-sm-4" for="name">Product ID:</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" id="idEdit" placeholder="" name="id" value="" readonly="true">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="name">Name:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="nameEdit" placeholder="Enter name" name="name" value="">
+      </div>
+    </div>
+    <div class="row">
+    	<div class="col-sm-3">
+      		<label class="control-label col-sm-12" for="id_categories">Category:</label>
+     	</div>
+      	<div class="col-sm-9 product-sorting">
+        	<select name="id_categories">
+        		<%
+        			for(int i = 0, length = categories.length() ; i < length ; i++)
+        			{
+        				JSONObject category = categories.getJSONObject(i);
+        				int id = category.getInt("id");
+        				String name = category.getString("name");
+        		%>
+        		<option value="<%=id%>"><%=name %></option>
+        		<%} %>
+        	</select>
+      	</div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="price">Price:</label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" id="priceEdit" placeholder="Enter price" name="price" value="" min="0" step="0.01">
+      </div>
+    </div>
+    <div class="row">
+    	<div class="col-sm-3">
+      		<label class="control-label col-sm-12" for="gender">Gender:</label>
+     	</div>
+      	<div class="col-sm-9 product-sorting">
+        	<select name="gender">
+        		<option value="women">Women</option>
+        		<option value="men">men</option>
+        	</select>
+      	</div>
+    </div>
+    <div class="row">
+    	<div class="col-sm-3">
+      		<label class="control-label col-sm-12" for="id_brands">Brand:</label>
+     	</div>
+      	<div class="col-sm-9 product-sorting">
+        	<select name="id_brands">
+        		<%
+        			for(int i=0,length = brands.length(); i < length ; i++)
+        			{
+        				JSONObject brand = brands.getJSONObject(i);
+        				int id = brand.getInt("id");
+        				String name = brand.getString("name");
+        		%>
+        		<option value="<%=id%>"><%=name %></option>
+        		<%} %>
+        	</select>
+      	</div>
+    </div>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <div class="checkbox">
+          <label class="control-label col-sm-12" for="image">4 Images:</label>
+          <label><input type="file" name="file" value="file" multiple="multiple"></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default">Submit</button>
+      </div>
+    </div>    
+  </form>
+  </div>
+</div>
 </div>
 <div class="modal-footer">
 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

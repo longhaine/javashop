@@ -178,7 +178,10 @@ $('#changepassword').on('click',function(){
 	location.href = "/change-pass";
 });
 $('#history').on('click',function(){
-	location.href = "/history";
+	location.href = "/orders";
+});
+$('#admin').on('click',function(){
+	location.href = "/admin";
 });
 $('#logout').on('click',function(){
 	$.ajax({
@@ -430,7 +433,7 @@ deleteBtn.click(function(){
 	var table = $(this).parent().attr('table');
 	var r = confirm('Do you want delete this?');
 	var that = $(this).closest('tr');
-	if(r == true)
+	if(r == true && id!= null)
 		{
 	       $.ajax({
 	          	type : 'get',
@@ -445,4 +448,13 @@ deleteBtn.click(function(){
 	              }
 	          }); 
 		}
-})
+});
+var editBtn = $('i.fa-file');
+editBtn.click(function(){
+	var id = $(this).parent().attr('class').substring(2);
+	var name = $(this).closest('tr').children('td:eq(0)').text();
+	var price = $(this).closest('tr').children('td:eq(2)').text();
+	$('input#idEdit').val(id);
+	$('input#nameEdit').val(name);
+	$('input#priceEdit').val(price);
+});

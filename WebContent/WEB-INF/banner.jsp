@@ -21,7 +21,7 @@
             <!-- Classy Menu -->
             <nav class="classy-navbar" id="essenceNav">
                 <!-- Logo -->
-                <a class="nav-brand" href="index"><img src="<c:url value='/img/logo/tlogovogue.png'/>" alt=""></a>
+                <a class="nav-brand" href="/"><img src="<c:url value='/img/logo/tlogovogue.png'/>" alt=""></a>
                 <!-- Navbar Toggler -->
                 <div class="classy-navbar-toggler">
                     <span class="navbarToggler"><span></span><span></span><span></span></span>
@@ -84,14 +84,12 @@
                             </li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="shop.html">Shop</a></li>
-                                    <li><a href="single-product-details.html">Product Details</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="single-blog.html">Single Blog</a></li>
-                                    <li><a href="regular-page.html">Regular Page</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="/women">Shop</a></li>
+                                    <li><a href="/check-out">Checkout</a></li>
+                                    <li><a href="/blog">Blog</a></li>
+                                    <li><a href="/single-blog">Single Blog</a></li>
+                                    <li><a href="/contact">Contact</a></li>
                                 </ul>
                             </li>
                             <li><a href="blog.html">Blog</a></li>
@@ -138,6 +136,12 @@
     					<div class="dropdown-divider"></div>
     					<li class="cursor-link" id="history">History</li> <!-- Link in js -->
     					<div class="dropdown-divider"></div>
+    					<%
+    					if(user.getInt("role")==1)
+    					{%>
+    					<li class="cursor-link" id="admin">Admin page</li> <!-- Link in js -->
+    					<div class="dropdown-divider"></div>
+    					<%} %>
     					<li class="cursor-link" id="logout">Logout</li> <!-- Link in js -->
     					<%	} %>
   					</ul>

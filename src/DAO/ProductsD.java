@@ -97,4 +97,22 @@ public class ProductsD {
 		String message = jsoObject.getString("message");
 		return message;
 	}
+	public String Update(JSONObject product,String id) throws IOException {
+		JSONObject request = new JSONObject();
+		request.put("product", product);
+		request.put("id", id);
+		CloseableHttpClient httpClient = HttpClientBuilder.create().build();
+		HttpPost post = new HttpPost("https://serverjavashop.herokuapp.com/products/update");
+		StringEntity params = new StringEntity(request.toString());
+		post.addHeader("content-type", "application/json");
+		post.setEntity(params);
+		HttpResponse response = httpClient.execute(post);
+		ResponseHandler<String> responseHandler = new BasicResponseHandler();
+		String responseBody = responseHandler.handleResponse(response);
+		httpClient.close();
+		JSONObject jsoObject = new JSONObject(responseBody);
+//		String message = jsoObject.getString("message");
+//		return message;
+		return responseBody;
+	}
 }
