@@ -111,8 +111,32 @@ public class ProductsD {
 		String responseBody = responseHandler.handleResponse(response);
 		httpClient.close();
 		JSONObject jsoObject = new JSONObject(responseBody);
-//		String message = jsoObject.getString("message");
-//		return message;
 		return responseBody;
+	}
+	public JSONArray Search(String q) throws IOException {
+		String path ="https://serverjavashop.herokuapp.com/products/search/"+q;
+		URL url = new URL(path);
+		Scanner scan = new Scanner(url.openStream());
+		String json ="";
+		while(scan.hasNext())
+		{
+			json = json + scan.nextLine();
+		}
+		scan.close();
+		JSONArray arrobject = new JSONArray(json);
+		return arrobject;
+	}
+	public JSONArray getProductBySearchCategory(String q,String category) throws IOException {
+		String path ="https://serverjavashop.herokuapp.com/products/search/"+q+"/category/"+category;
+		URL url = new URL(path);
+		Scanner scan = new Scanner(url.openStream());
+		String json ="";
+		while(scan.hasNext())
+		{
+			json = json + scan.nextLine();
+		}
+		scan.close();
+		JSONArray arrobject = new JSONArray(json);
+		return arrobject;
 	}
 }

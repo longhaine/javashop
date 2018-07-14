@@ -19,7 +19,7 @@
                     <div class="hero-content">
                         <h6>asoss</h6>
                         <h2>New Collection</h2>
-                        <a href="Shop" class="btn essence-btn">view collection</a>
+                        <a href="/women" class="btn essence-btn">view collection</a>
                     </div>
                 </div>
             </div>
