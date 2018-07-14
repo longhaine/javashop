@@ -41,7 +41,7 @@
                         <div class="widget catagory mb-50">
                             <!-- Widget Title -->
                             <h6 class="widget-title mb-30">Catagories</h6>
-                            <p><a href="#">All</a></p>
+                            <p><a href="search?q=<%=q%>">All</a></p>
                             <!--  Catagories  -->
                             <div class="catagories-menu">
                                 <ul id="menu-content2" class="menu-content collapse show">

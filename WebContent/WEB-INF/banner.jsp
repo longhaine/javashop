@@ -104,7 +104,7 @@
                 <!-- Search Area -->
                 <div class="search-area">
                     <form action="search" method="get">
-                        <input type="search" name="q" id="headerSearch" placeholder="Type for search">
+                        <input type="search" name="q" id="headerSearch" placeholder="Type for search" pattern=".{3,}" required title="3 characters minimum">
                         <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                     </form>
                 </div>
